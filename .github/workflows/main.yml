@@ -26,7 +26,9 @@ jobs:
         run: |
           sudo bash -ex ci/install-deps.sh
           sudo bash -ex ci/build.sh
-
+        env:
+          ARCH: ${{ matrix.ARCH }}
+          DIST: ${{ matrix.DIST }}
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
