@@ -2,17 +2,17 @@
 
 set -e
 
-if [[ "$ARCH" == "" ]]; then
-    echo "Usage: env ARCH=... bash $0"
-    exit 2
-fi
+#if [[ "$ARCH" == "" ]]; then
+#    echo "Usage: env ARCH=... bash $0"
+#    exit 2
+#fi
 
-if [[ "$CI" == "" ]]; then
-    echo "Caution: this script is supposed to run inside a (disposable) CI environment"
-    echo "It will alter a system, and should not be run on workstations or alike"
-    echo "You can export CI=1 to prevent this error from being shown again"
-    exit 3
-fi
+#if [[ "$CI" == "" ]]; then
+#    echo "Caution: this script is supposed to run inside a (disposable) CI environment"
+#    echo "It will alter a system, and should not be run on workstations or alike"
+#    echo "You can export CI=1 to prevent this error from being shown again"
+#    exit 3
+#fi
 
 case "$ARCH" in
     x86_64|i386|armhf|arm64)
