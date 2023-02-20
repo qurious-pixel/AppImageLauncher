@@ -76,7 +76,7 @@ packages=(
     # clang -target arm-linux-gnueabihf ...
     # we must use clang > 3.8.0, and newer versions should work as drop-in replacement, so we can just use the newest
     # clang available on xenial on all platforms
-    clang-8
+    clang
 )
 
 if [[ "$BUILD_LITE" == "" ]]; then
