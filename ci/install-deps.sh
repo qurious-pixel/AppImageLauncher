@@ -2,10 +2,10 @@
 
 set -e
 
-ARCH=${{ env.ARCH }}
+#ARCH=${{ env.ARCH }}
 echo $ARCH
 
-DIST=${{ env.DIST }}
+#DIST=${{ env.DIST }}
 echo $DIST
 
 if [[ "$ARCH" == "" ]]; then
