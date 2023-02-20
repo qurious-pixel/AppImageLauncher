@@ -122,10 +122,11 @@ if [[ "$ARCH" == "arm64"* ]] || [[ "$ARCH" == "x86_64" ]]; then
         echo "Cannot determine 32-bit architecture matching 64-bit architecture $ARCH"
         exit 6
     fi
-
+    GCC_VERSION="$(gcc --version | grep gcc | awk '{print $4}' | cut -d'.' -f 1)"
     apt-get install -y \
-        "$(dpkg -l | grep libgcc | grep dev | awk '{print $2}' | cut -d: -f1 | uniq | head -n -1)":"$ARCH_32BIT" \
-        "$(dpkg -l | grep libstdc++ | grep dev | awk '{print $2}' | cut -d: -f1 | uniq | head -n -1)":"$ARCH_32BIT"
+        libgcc-"$GCC_VERSION"-dev:"$ARCH_32BIT" libstdc++-"$GCC_VERSION"-dev:"$ARCH_32BIT"
+    #    "$(dpkg -l | grep libgcc | grep dev | awk '{print $2}' | cut -d: -f1 | uniq | head -n -1)":"$ARCH_32BIT" \
+    #    "$(dpkg -l | grep libstdc++ | grep dev | awk '{print $2}' | cut -d: -f1 | uniq | head -n -1)":"$ARCH_32BIT"
 fi
 
 # install more recent CMake version which fixes some linking issue in CMake < 3.10
