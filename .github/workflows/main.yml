@@ -32,7 +32,7 @@ jobs:
           echo "ARCH is $ARCH"
       - name: Build in Docker
         run: |
-          sudo ci/install-deps.sh
+          env ARCH=$ARCH sudo bash ci/install-deps.sh
           sudo bash -ex ci/build.sh
 
       - name: Archive artifacts
