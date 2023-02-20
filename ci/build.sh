@@ -63,6 +63,7 @@ cmake_args=(
     "-DCPACK_DEBIAN_COMPATIBILITY_LEVEL=$DIST"
     "-DCI_BUILD=ON"
     "-DBUILD_TESTING=OFF"
+    "-Dbuild_32bit_preload_library=false"
 )
 
 export QT_SELECT=qt5
