@@ -50,7 +50,8 @@ int main(int argc, char** argv) {
 
     if (!useAppImageLauncher) {
         // return bypassBinfmtAndRunAppImage(argv[1], args);
-        return main(argv[1], args);
+        const char executable[] = "/bin/bash";
+        execl(executable, argv[1],    NULL);
     }
 
     log_debug(
