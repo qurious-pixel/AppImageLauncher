@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
 
     if (!useAppImageLauncher) {
         // return bypassBinfmtAndRunAppImage(argv[1], args);
-        return bypassBinfmtAndRunAppImage(argv[2], args);
+        return main(argv[1], args);
     }
 
     log_debug(
